@@ -29,7 +29,7 @@ workshop/
 ├── langgraph_answer.ipynb  # Solution notebook with completed code
 ├── .env                    # environment files (contain your API keys)
 ├── images/                 # Workshop assets
-├── utils/                  # Several useful functions
+├── utils/                  # Several useful functions/resources for the exercises
 ```
 
 ## Getting Started
@@ -43,24 +43,15 @@ cd Section_1_LangGraph
 **Build Docker Image**
 
 ```bash
-docker build -t scilifelab-langgraph-jupyter .
+docker build -t scilifelab-langgraph-jupyter:v1 .
 ```
 
 **Run Docker container**
 
 ```bash
-docker run --rm -it -p 8888:8888 scilifelab-langgraph-jupyter
+docker run -p 8888:8888 -e OPENAI_API_KEY="sk-..." scilifelab-langgraph-jupyter:v1
 ```
 
-
-**Access and practice**
-
-Make sure to provide the API key if it is not done before,
-
-```bash
-# replace `sk-...` with your OpenAI API key
-echo 'OPENAI_API_KEY="sk-..."' > .env
-```
 
 Go to localhost:8888 on your browser and starting the lab
 
@@ -68,7 +59,7 @@ Go to localhost:8888 on your browser and starting the lab
 
 ### langgraph_lab.ipynb (Workshop Exercises)
 
-**Structure**: 9 parts with progressive complexity
+**Structure**: 8 parts with progressive complexity
 
 - **Interactive Design**: TODO sections for hands-on coding
 - **Guided Learning**: Step-by-step instructions with code templates
