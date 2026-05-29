@@ -1,18 +1,18 @@
-# [Developing AI Agents in Life Sciences (Gothenburg)](https://www.lyyti.in/developing_ai_agents)
+# [Developing AI Agents in Life Sciences (Gothenburg)](https://www.scilifelab.se/event/ai-agents-in-life-science-gothenburg/)
 
 > **SciLifeLab Data Centre** · Korallrevet, Natrium, Medicinaregatan 7B, Gothenburg · 2026-06-09
 
 ---
 
 <div align="center">
-<a href="https://www.lyyti.in/developing_ai_agents">
+<a href="[https://www.lyyti.in/developing_ai_agents](https://www.scilifelab.se/event/ai-agents-in-life-science-gothenburg/)">
 <img src="session-2-mcp/1-mcp-from-scratch/images/cover_image.png" width="400" alt="Workshop Title Image">
 </a>
 </div>
 
 ## Welcome
 
-We are delighted to invite you to our hands-on workshop on **[Developing AI Agents in Life Sciences](https://www.lyyti.in/developing_ai_agents)**, organised by [SciLifeLab Data Centre](http://scilifelab.se/data).
+We are delighted to invite you to our hands-on workshop on **[Developing AI Agents in Life Sciences](https://www.scilifelab.se/event/ai-agents-in-life-science-gothenburg/)**, organised by [SciLifeLab Data Centre](http://scilifelab.se/data).
 
 AI agents are emerging as autonomous systems that orchestrate scientific workflows by interacting with digital tools and data sources. In life science research, they can simplify complex analyses by automating data integration, run computational models, and coordinate experimental steps, making research pipelines more efficient and reproducible.
 
@@ -40,16 +40,6 @@ Welcome!
 | **Format** | On-site only, no remote participation |
 | **Catering** | Fika and lunch provided free of charge |
 | **Registration deadline** | 5 June 2026, 24:00 |
-
----
-
-## Registration
-
-We expect many to be interested in attending this event. After we reach max capacity, we will open a waitlist. If you cannot join, please cancel your registration as soon as possible to make your spot available for someone else. Please add dietary restrictions to your registration.
-
-[**Register for the workshop**](https://www.lyyti.in/developing_ai_agents)
-
-Please register by **5 June 2026 at 24:00**.
 
 ---
 
