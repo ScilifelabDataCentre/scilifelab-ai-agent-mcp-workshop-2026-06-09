@@ -1,22 +1,22 @@
-# [Developing AI Agents in Life Sciences](https://www.scilifelab.se/event/ai-agents-in-life-science-stockholm/)
+# [Developing AI Agents in Life Sciences (Gothenburg)](https://www.lyyti.in/developing_ai_agents)
 
-> **SciLifeLab Data Centre** · Air & Fire, SciLifeLab, Solna · 2026-03-05
+> **SciLifeLab Data Centre** · Korallrevet, Natrium, Medicinaregatan 7B, Gothenburg · 2026-06-09
 
 ---
 
 <div align="center">
-<a href="https://www.scilifelab.se/event/ai-agents-in-life-science-stockholm/">
+<a href="https://www.lyyti.in/developing_ai_agents">
 <img src="session-2-mcp/1-mcp-from-scratch/images/cover_image.png" width="400" alt="Workshop Title Image">
 </a>
 </div>
 
 ## Welcome
 
-We are delighted to invite you to our hands-on workshop on **[Developing AI Agents in Life Sciences](https://www.scilifelab.se/event/ai-agents-in-life-science-stockholm/)**, organised by SciLifeLab Data Centre.
+We are delighted to invite you to our hands-on workshop on **[Developing AI Agents in Life Sciences](https://www.lyyti.in/developing_ai_agents)**, organised by [SciLifeLab Data Centre](http://scilifelab.se/data).
 
 AI agents are emerging as autonomous systems that orchestrate scientific workflows by interacting with digital tools and data sources. In life science research, they can simplify complex analyses by automating data integration, run computational models, and coordinate experimental steps, making research pipelines more efficient and reproducible.
 
-In this on-site workshop, we will introduce and discuss AI agents in life science, and engage in collaborative practical sessions.
+In this on-site workshop, held at Korallrevet, Natrium building (Medicinaregatan 7B) in Gothenburg, we will introduce and discuss AI agents in life science, and engage in collaborative practical sessions.
 
 Welcome!
 
@@ -24,9 +24,9 @@ Welcome!
 
 ## Speakers & Facilitators
 
-- **Johan Alfredéen (johan.alfredeen@scilifelab.uu.se)**: Data Engineer (AI), SciLifeLab Data Centre, 
-- **Mahbub Ul Alam (mahbub.ul.alam@scilifelab.uu.se)**: Data Engineer (AI), SciLifeLab Data Centre, 
-- **Dinh Long Huynh (dinh-long.huynh@uu.se)**: PhD Candidate, Uppsala University, 
+- **Dinh Long Huynh (dinh-long.huynh@uu.se)**: PhD Candidate, Uppsala University
+- **Mahbub Ul Alam (mahbub.ul.alam@scilifelab.uu.se)**: Data Engineer (AI), SciLifeLab Data Centre
+- **Johan Alfredéen (johan.alfredeen@scilifelab.uu.se)**: Data Engineer (AI), SciLifeLab Data Centre
 
 ---
 
@@ -34,11 +34,22 @@ Welcome!
 
 | | |
 |---|---|
-| **Date** | Thursday, 5 March 2026 |
-| **Time** | 10:00 – 15:30 *(coffee served from 09:30)* |
-| **Location** | Room Air & Fire, SciLifeLab, Tomtebodavägen 23, Solna |
+| **Date** | Tuesday, 9 June 2026 |
+| **Time** | 10:00 to 15:30 *(coffee served from 09:30)* |
+| **Location** | Room Korallrevet, Natrium building, Medicinaregatan 7B, Gothenburg |
 | **Format** | On-site only, no remote participation |
 | **Catering** | Fika and lunch provided free of charge |
+| **Registration deadline** | 5 June 2026, 24:00 |
+
+---
+
+## Registration
+
+We expect many to be interested in attending this event. After we reach max capacity, we will open a waitlist. If you cannot join, please cancel your registration as soon as possible to make your spot available for someone else. Please add dietary restrictions to your registration.
+
+[**Register for the workshop**](https://www.lyyti.in/developing_ai_agents)
+
+Please register by **5 June 2026 at 24:00**.
 
 ---
 
@@ -53,34 +64,51 @@ This workshop is open to **researchers, PhD students, and research infrastructur
 
 ---
 
+## What You Will Learn
+
+The workshop will feature a series of engaging presentations, interactive discussions, and collaborative sessions focusing on:
+
+- Introduction to AI agent technologies
+- Applications, opportunities, and challenges of AI agents in life science
+- Hands-on tutorials with reasoning models, LangGraph, and MCP servers
+- Discussions on the role of AI agents in shaping the future of life science
+
+---
+
 ## Agenda
 
 | Time | Session |
 |---|---|
-| 09:30 – 10:00 | Light breakfast and networking |
-| 10:00 – 10:15 | **Presentation 1** — Introduction: Exploring how AI agents can transform life sciences · *Johan Alfredéen* |
-| 10:15 – 10:30 | **Demonstration** — AI agents in action · *Mahbub Ul Alam* |
-| 10:30 – 12:00 | **Hands-on Session 1** — Developing AI agents with LangGraph & ReAct · *Dinh Long Huynh, Mahbub Ul Alam* |
-| 12:00 – 13:00 | Lunch and networking |
-| 13:00 – 13:30 | **Continuation of Session 1** — LangGraph & ReAct |
-| 13:30 – 15:00 | **Hands-on Session 2** — AI agent collaboration with the Model Context Protocol (MCP) · *Mahbub Ul Alam, Johan Alfredéen, Dinh Long Huynh* |
-| 15:00 – 15:15 | **Presentation 2** — Deploying AI Agents: Legal, Technical, and Practical Considerations · *Johan Alfredéen* |
-| 15:15 – 15:30 | Concluding session — Open Q&A |
+| 09:30 to 10:00 | Light breakfast and networking |
+| 10:00 to 10:15 | **Presentation 1**: Introduction. Exploring how AI agents can transform life sciences. *Johan Alfredéen* |
+| 10:15 to 10:30 | **Demonstration**: AI agents in action. *Mahbub Ul Alam* |
+| 10:30 to 12:00 | **Hands-on Session 1**: Developing AI agents with LangGraph & ReAct. *Dinh Long Huynh, Mahbub Ul Alam* |
+| 12:00 to 13:00 | Lunch and networking |
+| 13:00 to 13:30 | **Continuation of Session 1**: LangGraph & ReAct |
+| 13:30 to 15:00 | **Hands-on Session 2**: AI agent collaboration with the Model Context Protocol (MCP). *Mahbub Ul Alam, Johan Alfredéen, Dinh Long Huynh* |
+| 15:00 to 15:15 | **Presentation 2**: Deploying AI Agents. Legal, technical, and practical considerations. *Johan Alfredéen* |
+| 15:15 to 15:30 | Concluding session. Open Q&A |
 | 15:30 | Fika and networking |
 
 ---
 
-## Download Presentation Slides!
+## Download Presentation Slides
 
-[**Presentation 1** — Introduction: Exploring how AI agents can transform life sciences · *Johan Alfredéen*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-03-05/blob/main/presentation-slides/1_Introduction_Exploring_how_AI_agents%20_an_transform_life_sciences_Johan_Alfred%C3%A9en.pdf)
+*Presentation slides will be uploaded to this repository after the workshop.*
 
-[**Demonstration** — AI agents in action · *Mahbub Ul Alam*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-03-05/blob/main/presentation-slides/2_AI_agents_in_action_Mahbub_Ul_Alam.pdf)
+<!--
+Once slides are added, populate the links below:
 
-[**Hands-on Session 1** — Developing AI agents with LangGraph & ReAct · *Dinh Long Huynh, Mahbub Ul Alam*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-03-05/blob/main/presentation-slides/3_Developing_AI_agents_with_LangGraph_and_ReAct_Dinh_Long_Huynh_Mahbub_Ul_Alam.pdf)
+[**Presentation 1**: Introduction. Exploring how AI agents can transform life sciences. *Johan Alfredéen*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/1_Introduction_Exploring_how_AI_agents_can_transform_life_sciences_Johan_Alfred%C3%A9en.pdf)
 
-[**Hands-on Session 2** — AI agent collaboration with the Model Context Protocol (MCP) · *Mahbub Ul Alam, Johan Alfredéen, Dinh Long Huynh*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-03-05/blob/main/presentation-slides/4_AI_agent_collaboration_with_the_Model_Context_Protocol_(MCP)_Mahbub_Ul_Alam_Johan_Alfred%C3%A9en_Dinh_Long_Huynh.pdf)
+[**Demonstration**: AI agents in action. *Mahbub Ul Alam*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/2_AI_agents_in_action_Mahbub_Ul_Alam.pdf)
 
-[**Presentation 2** — Deploying AI Agents: Legal, Technical, and Practical Considerations · *Johan Alfredéen*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-03-05/blob/main/presentation-slides/5_Deploying_AI_Agents_Legal_Technical_and_Practical_Considerations_Johan%20Alfred%C3%A9en.pdf)
+[**Hands-on Session 1**: Developing AI agents with LangGraph & ReAct. *Dinh Long Huynh, Mahbub Ul Alam*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/3_Developing_AI_agents_with_LangGraph_and_ReAct_Dinh_Long_Huynh_Mahbub_Ul_Alam.pdf)
+
+[**Hands-on Session 2**: AI agent collaboration with the Model Context Protocol (MCP). *Mahbub Ul Alam, Johan Alfredéen, Dinh Long Huynh*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/4_AI_agent_collaboration_with_the_Model_Context_Protocol_(MCP)_Mahbub_Ul_Alam_Johan_Alfred%C3%A9en_Dinh_Long_Huynh.pdf)
+
+[**Presentation 2**: Deploying AI Agents. Legal, technical, and practical considerations. *Johan Alfredéen*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/5_Deploying_AI_Agents_Legal_Technical_and_Practical_Considerations_Johan%20Alfred%C3%A9en.pdf)
+-->
 
 ---
 
@@ -99,7 +127,7 @@ Each session directory contains its own detailed `README.md` with full instructi
 
 All workshop materials run inside Docker containers. **No local Python environment setup is required.**
 
-> ⚠️ **Docker Desktop must be installed and running on your laptop.**  
+> ⚠️ **Docker Desktop must be installed and running on your laptop.**
 
 ---
 
@@ -111,8 +139,8 @@ Docker Desktop is the recommended way to run Docker on your personal machine. It
 
 1. Go to [https://docs.docker.com/desktop/install/mac-install/](https://docs.docker.com/desktop/install/mac-install/)
 2. Choose the installer for your chip:
-   - **Apple Silicon (M1/M2/M3/M4)** → download the `Apple Silicon` `.dmg`
-   - **Intel** → download the `Intel Chip` `.dmg`
+   - **Apple Silicon (M1/M2/M3/M4)**: download the `Apple Silicon` `.dmg`
+   - **Intel**: download the `Intel Chip` `.dmg`
 3. Open the downloaded `.dmg` file and drag **Docker** into your Applications folder
 4. Launch Docker from Applications and follow the onboarding prompts
 5. Verify the installation by opening a terminal and running:
@@ -138,7 +166,7 @@ Docker Desktop is available for Ubuntu, Debian, and Fedora.
 
 1. Go to [https://docs.docker.com/desktop/install/windows-install/](https://docs.docker.com/desktop/install/windows-install/)
 2. Download the **Docker Desktop Installer**
-3. Run the installer — when prompted, ensure **"Use WSL 2 instead of Hyper-V"** is selected (recommended)
+3. Run the installer. When prompted, ensure **"Use WSL 2 instead of Hyper-V"** is selected (recommended)
 4. After installation, Docker Desktop will start automatically
 5. Open **PowerShell** or **Command Prompt** and verify:
    ```cmd
@@ -168,7 +196,7 @@ We strongly recommend pulling the pre-built images from Docker Hub. This is the 
 docker pull mahbub1969/scilifelab-langgraph-workshop:v1
 ```
 
-**Run the container:** (replace sk-... with your OpenAI API key):
+**Run the container** (replace `sk-...` with your OpenAI API key):
 ```bash
 docker run -p 8888:8888 -e OPENAI_API_KEY="sk-..." mahbub1969/scilifelab-langgraph-workshop:v1
 ```
@@ -244,4 +272,4 @@ For detailed content, notebook guidance, and troubleshooting, please refer to th
 
 ## Questions
 
-For questions about the workshop content or the SciLifeLab Serve platform, contact the SciLifeLab Data Centre team at **serve@scilifelab.se**.
+This event is organised by SciLifeLab Data Centre. For questions about the workshop content or the SciLifeLab Serve platform, contact us at **[serve@scilifelab.se](mailto:serve@scilifelab.se)**.
