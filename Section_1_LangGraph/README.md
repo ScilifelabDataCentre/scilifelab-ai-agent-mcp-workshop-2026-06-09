@@ -6,7 +6,7 @@ A comprehensive hands-on workshop tutoring participants how to build AI agents u
 
 ## Workshop Overview
 
-This 75-minute interactive workshop introduces participants to **LangGraph**, a low-level orchestration framework for constructing stateful AI workflows using graphs. Participants will learn to build AI agents that can perform mathematical calculations, search scientific literature, and query drug databases.
+This 75-minute interactive workshop introduces participants to **LangGraph**, an orchestration framework for bulding stateful AI agents/workflows/systems using graphs. Participants will learn to build AI agents that can perform literature search, resolving SMILES string, and calculating physiochemical properties.
 
 ### Learning Objectives
 
@@ -17,7 +17,7 @@ By the end of this workshop, participants will:
 - Build a ReAct-style agent from scratch using LLMs and custom tools
 - Implement agent memory to maintain conversational context
 - Compare custom agents with prebuilt LangGraph agents
-- Explore advanced features like error handling and streaming
+- Explore advanced agentic architectures, including  CodeAct agent and Multi-agent.
 
 ## Repository Structure
 
@@ -53,7 +53,7 @@ docker run -p 8888:8888 -e OPENAI_API_KEY="sk-..." scilifelab-langgraph-jupyter:
 ```
 
 
-Go to localhost:8888 on your browser and starting the lab
+Go to **http://localhost:8888** on your browser and starting the lab
 
 ## Detailed Notebook Content
 
@@ -61,8 +61,8 @@ Go to localhost:8888 on your browser and starting the lab
 
 **Structure**: 8 parts with progressive complexity
 
-- **Interactive Design**: TODO sections for hands-on coding
-- **Guided Learning**: Step-by-step instructions with code templates
+- **Interactive Learning**: TODO sections for hands-on coding
+- **Guided Learning**: Step-by-step instructions with explanation and code templates
 - **Domain Focus**: Drug discovery use cases throughout
 - **Progressive Complexity**: From simple tools to complete agent systems
 
@@ -71,6 +71,5 @@ Go to localhost:8888 on your browser and starting the lab
 **Purpose**: Reference implementation with all exercises completed
 
 - **Full Code**: Working solutions for all TODO sections
-- **Error Handling**: Robust implementations with try-catch blocks
 - **Best Practices**: Proper Python coding standards and documentation
 - **Testing Ready**: Includes visualization and interaction loops
