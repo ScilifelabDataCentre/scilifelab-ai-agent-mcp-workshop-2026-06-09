@@ -5,18 +5,18 @@
 # Build context: session-2-mcp/
 #
 # Pull from dockerhub:
-#   docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." mahbub1969/scilifelab-mcp-workshop:v2
+#   docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." mahbub1969/scilifelab-gothenburg-workshop-mcp:v1
 #
 # Local:
-#   docker build -t <your-dockerhub-account-name>/scilifelab-mcp-workshop:v2 .
-#   docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." <your-dockerhub-account-name>/scilifelab-mcp-workshop:v2
+#   docker build -t <your-dockerhub-account-name>/scilifelab-gothenburg-workshop-mcp:v1 .
+#   docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." <your-dockerhub-account-name>/scilifelab-gothenburg-workshop-mcp:v1
 # Multi-arch: to ensure it runs on both Linux and Mac
 #   docker buildx build --platform linux/amd64,linux/arm64 \
-#       -t <your-dockerhub-account-name>/scilifelab-mcp-workshop:v1 --push .
+#       -t <your-dockerhub-account-name>/scilifelab-gothenburg-workshop-mcp:v1 --push .
 #
 # SciLifeLab Serve deployment (https://serve.scilifelab.se/):
 #   Create a Custom app
-#   Use Image: mahbub1969/scilifelab-mcp-workshop:v2
+#   Use Image: mahbub1969/scilifelab-gothenburg-workshop-mcp:v1
 #   Set port to 7860
 #   Make sure to provide API key
 # =============================================================================

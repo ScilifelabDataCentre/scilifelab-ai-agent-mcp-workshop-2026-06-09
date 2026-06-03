@@ -31,7 +31,7 @@ You need an **open-llm API key** (self-hosted — the default). An OpenAI key al
 Everything is pre-installed. One command to start:
 
 ```bash
-docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." mahbub1969/scilifelab-mcp-workshop:v2
+docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." mahbub1969/scilifelab-gothenburg-workshop-mcp:v1
 ```
 
 Then open **http://localhost:7860** in your browser and navigate to `1-mcp-from-scratch/mcp_workshop.ipynb`.
@@ -40,8 +40,8 @@ Then open **http://localhost:7860** in your browser and navigate to `1-mcp-from-
 
 ```bash
 # From the session-2-mcp/ directory
-docker build -t scilifelab-mcp-workshop:v1 .
-docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." scilifelab-mcp-workshop:v2
+docker build -t scilifelab-gothenburg-workshop-mcp:v1 .
+docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." scilifelab-gothenburg-workshop-mcp:v1
 ```
 
 Then open **http://localhost:7860** as above.
@@ -50,7 +50,7 @@ Then open **http://localhost:7860** as above.
 
 > This option is for **after the workshop**, if you want to revisit the material or share it with colleagues without installing Docker locally. During the session, use Option 1 or 2.
 
-If you are affiliated with a Swedish research institution, you can deploy this as a persistent app on [SciLifeLab Serve](https://serve.scilifelab.se/). Create a **Custom app**, set the image to `mahbub1969/scilifelab-mcp-workshop:v1`, port `7860`, and provide your API key in the `.env` file after.
+If you are affiliated with a Swedish research institution, you can deploy this as a persistent app on [SciLifeLab Serve](https://serve.scilifelab.se/). Create a **Custom app**, set the image to `mahbub1969/scilifelab-gothenburg-workshop-mcp:v1`, port `7860`, and provide your API key in the `.env` file after.
 
 For questions about Serve deployment, contact the SciLifeLab Serve team at **serve@scilifelab.se**.
 
