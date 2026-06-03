@@ -1,6 +1,6 @@
 # Session 2 – AI Agent Collaboration with the Model Context Protocol (MCP)
 
-> **SciLifeLab AI Agents in Life Sciences Workshop** · Stockholm · 2026-03-05
+> **SciLifeLab AI Agents in Life Sciences Workshop** · Gothenbur · 2026-06-09
 
 In Session 1 you built a drug discovery AI agent with LangGraph, a brain that could reason, plan, and call tools like `resolve_smiles`, `get_properties`, and `lit_search`. But those tools were locked inside your Python file.
 
@@ -37,10 +37,11 @@ Once the container is running, open `http://localhost:7860` in your browser and 
 Your `.env` file should contain:
 
 ```
-OPENAI_API_KEY="paste-your-key-here"
+OPENLLM_API_KEY="paste-your-key-here"
+# Optional OpenAI fallback: OPENAI_API_KEY="sk-..."
 ```
 
-If you started the Docker container with `-e OPENAI_API_KEY="sk-..."`, this is written automatically. Otherwise, edit the `.env` file in this directory.
+If you started the Docker container with `-e OPENLLM_API_KEY="sk-..."`, this is written automatically. Otherwise, edit the `.env` file in this directory.
 
 ---
 
@@ -156,7 +157,7 @@ python shamsul-mcp-client.py --image example.jpg --study-id "CheXpert-v1.0/valid
 |---|---|
 | `Address already in use` on a port | `lsof -ti:8501 | xargs kill` (replace 8501 with the relevant port) |
 | `ModuleNotFoundError` for any package | All dependencies are pre-installed in the Docker image. If running locally, see `requirements.txt` in the parent directory |
-| OpenAI 401 / authentication error | Check `OPENAI_API_KEY` in your `.env` file |
+| LLM 401 / authentication error | Check `OPENLLM_API_KEY` (or `OPENAI_API_KEY`) in your `.env` file |
 | RDKit not found | No action needed, properties fall back to pre-computed values in `drug_db.json` |
 | `drug_db.json` not found | Run notebook cell § 3.1 first |
 | Client shows `ConnectionError` | Make sure the corresponding server is running in another terminal |

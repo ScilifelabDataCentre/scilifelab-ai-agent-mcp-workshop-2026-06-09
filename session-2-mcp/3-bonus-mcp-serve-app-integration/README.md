@@ -54,7 +54,7 @@ This bonus section bridges that gap. You will wrap [SHAMSUL](https://shamsul.ser
 
 You need the Session 2 virtual environment, plus:
 
-- An **OpenAI API key** (same as `1-mcp-from-scratch/`) set as `OPENAI_API_KEY` in your `.env` or environment
+- An **open-llm API key** (same as `1-mcp-from-scratch/`) set as `OPENLLM_API_KEY` in your `.env` or environment (or `OPENAI_API_KEY` for the OpenAI fallback)
 - A **sample chest X-ray image** in JPEG format from the CheXpert dataset referenced in the SHAMSUL paper
 
 ---

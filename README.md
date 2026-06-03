@@ -202,12 +202,12 @@ Then open **http://localhost:8888** in your browser and navigate to `langgraph_l
 
 **Pull the image:**
 ```bash
-docker pull mahbub1969/scilifelab-mcp-workshop:v1
+docker pull mahbub1969/scilifelab-mcp-workshop:v2
 ```
 
 **Run the container** (replace `sk-...` with your OpenAI API key):
 ```bash
-docker run -p 7860:7860 -e OPENAI_API_KEY="sk-..." mahbub1969/scilifelab-mcp-workshop:v1
+docker run -p 7860:7860 -e OPENAI_API_KEY="sk-..." mahbub1969/scilifelab-mcp-workshop:v2
 ```
 
 Then open **http://localhost:7860** in your browser and navigate to `1-mcp-from-scratch/mcp_workshop.ipynb`.
@@ -231,9 +231,9 @@ docker run -p 8888:8888 -e OPENAI_API_KEY="sk-..." scilifelab-langgraph-jupyter
 **Session 2:**
 ```bash
 cd session-2-mcp/
-docker build -t scilifelab-mcp-workshop:v1 .
+docker build -t scilifelab-mcp-workshop:v2 .
 # replace `sk-...` with your OpenAI API key
-docker run -p 7860:7860 -e OPENAI_API_KEY="sk-..." scilifelab-mcp-workshop:v1
+docker run -p 7860:7860 -e OPENAI_API_KEY="sk-..." scilifelab-mcp-workshop:v2
 ```
 
 ---

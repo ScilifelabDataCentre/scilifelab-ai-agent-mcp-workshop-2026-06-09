@@ -16,6 +16,44 @@ from mcp.client.session import ClientSession
 load_dotenv()
 SERVER = "http://localhost:8501/mcp"
 
+# ── LLM provider: self-hosted open-llm by default, OpenAI as fallback ──
+from openai import (OpenAI, APIConnectionError, AuthenticationError,
+                    PermissionDeniedError, InternalServerError)
+
+FALLBACK_ERRORS = (APIConnectionError, AuthenticationError,
+                   PermissionDeniedError, InternalServerError)
+PROVIDERS = [
+    {"name": "open-llm",
+     "base_url": os.getenv("OPENLLM_BASE_URL", "https://open-llm.scilifelab.se/api"),
+     "api_key":  os.getenv("OPENLLM_API_KEY"),
+     "model":    os.getenv("OPENLLM_MODEL", "qwen3")},
+    {"name": "openai", "base_url": None,
+     "api_key": os.getenv("OPENAI_API_KEY"), "model": "gpt-4o"},
+]
+PROVIDERS = [p for p in PROVIDERS if p["api_key"]]
+
+
+def chat_completion(messages, **kwargs):
+    last = None
+    for p in PROVIDERS:
+        try:
+            client = OpenAI(api_key=p["api_key"], base_url=p["base_url"])
+
+            call_kwargs = dict(kwargs)
+            if p["name"] == "open-llm":                       # qwen3 only
+                call_kwargs["extra_body"] = {
+                    "chat_template_kwargs": {"enable_thinking": False}
+                }
+            # OpenAI fallback: extra_body is NOT added
+
+            return client.chat.completions.create(
+                model=p["model"], messages=messages, **call_kwargs
+            )
+        except FALLBACK_ERRORS as e:
+            print(f"  [{p['name']}] {type(e).__name__} — falling back")
+            last = e
+    raise RuntimeError("No LLM provider reachable") from last
+
 def _text(obj):
     for item in getattr(obj, "contents", None) or getattr(obj, "content", []):
         if hasattr(item, "text") and item.text: return item.text
@@ -61,24 +99,25 @@ async def main():
             payload = json.loads(raw)
             print("  Prompt (first 160 chars):", payload["prompt"][:160], "...\n")
 
-            api_key = os.getenv("OPENAI_API_KEY")
-            if api_key:
-                from openai import OpenAI
-                llm = OpenAI(api_key=api_key)
-                completion = llm.chat.completions.create(
-                    model="gpt-4o",
-                    messages=[{"role": "user", "content": payload["prompt"]}],
-                    max_tokens=120,
-                )
-                hypothesis = completion.choices[0].message.content
-                print("  LLM hypothesis:", hypothesis, "\n")
-                # Submit result back
-                submit = _text(await session.call_tool("submit_hypothesis_result",
-                    arguments={"callback_token": payload["callback_token"],
-                               "llm_result": hypothesis}))
-                print("  Callback:", json.loads(submit)["status"], "\n")
+            if PROVIDERS:
+                completion = chat_completion(
+                    [{"role": "user", "content": payload["prompt"]}],
+                        max_tokens=2048,)
+                
+                msg = completion.choices[0].message
+                hypothesis = (msg.content or "").strip()
+                if not hypothesis:
+                    fr = completion.choices[0].finish_reason
+                    print(f"  LLM returned no content (finish_reason={fr}); skipping submit.\n")
+                else:
+                    print("  LLM hypothesis:", hypothesis, "\n")
+                    submit = _text(await session.call_tool("submit_hypothesis_result",
+                        arguments={"callback_token": payload["callback_token"],
+                        "llm_result": hypothesis}))
+                    print("  Callback:", json.loads(submit)["status"], "\n")
+                
             else:
-                print("  (Set OPENAI_API_KEY to see the LLM complete the hypothesis)\n")
+                print("  (Set OPENLLM_API_KEY or OPENAI_API_KEY to complete the hypothesis)\n")
 
             # 5. Streaming: stream_drug_analysis
             print("5. stream_drug_analysis(DASATINIB)  [streaming + progress]")

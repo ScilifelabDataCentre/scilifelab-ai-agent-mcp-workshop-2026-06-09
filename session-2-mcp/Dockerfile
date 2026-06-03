@@ -1,19 +1,19 @@
 # =============================================================================
-# Dockerfile — SciLifeLab MCP Workshop (Session 2)
+# Dockerfile — Workshop: Developing AI Agents in Life Sciences (Gothenburg), SciLifeLab Data Centre · Korallrevet, Natrium, Medicinaregatan 7B, Gothenburg · 2026-06-09
 # Compatible with both local Docker and SciLifeLab Serve
 #
 # Build context: session-2-mcp/
 #
 # Pull from dockerhub:
-#   docker run -p 7860:7860 -e OPENAI_API_KEY="sk-..." mahbub1969/scilifelab-mcp-workshop:v1
+#   docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." mahbub1969/scilifelab-mcp-workshop:v2
 #
 # Local:
-#   docker build -t <your-dockerhub-account-name>/scilifelab-mcp-workshop:v1 .
-#   docker run -p 7860:7860 -e OPENAI_API_KEY="sk-..." <your-dockerhub-account-name>/scilifelab-mcp-workshop:v1
+#   docker build -t <your-dockerhub-account-name>/scilifelab-mcp-workshop:v2 .
+#   docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." <your-dockerhub-account-name>/scilifelab-mcp-workshop:v2
 #
 # SciLifeLab Serve deployment (https://serve.scilifelab.se/):
 #   Create a Custom app
-#   Use Image: mahbub1969/scilifelab-mcp-workshop:v1
+#   Use Image: mahbub1969/scilifelab-mcp-workshop:v2
 #   Set port to 7860
 #   Make sure to provide API key
 # =============================================================================
@@ -21,7 +21,7 @@
 FROM python:3.14-slim
 
 LABEL maintainer="SciLifeLab Data Centre <serve@scilifelab.se>"
-LABEL description="Developing AI Agents in Life Sciences, Hands-on Session 2: AI agent collaboration with the Model Context Protocol (MCP), 2026-03-05"
+LABEL description="Workshop: Developing AI Agents in Life Sciences (Gothenburg), SciLifeLab Data Centre · Korallrevet, Natrium, Medicinaregatan 7B, Gothenburg · 2026-06-09, Hands-on Session 2: AI agent collaboration with the Model Context Protocol (MCP)"
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV USER=workshop
@@ -63,7 +63,7 @@ COPY 3-bonus-mcp-serve-app-integration/ $HOME/app/repo/3-bonus-mcp-serve-app-int
 COPY jupyter_lab_config.py $HOME/app/jupyter_lab_config.py
 
 # .env placeholder (start-script.sh writes real ones at runtime)
-RUN echo '# Set OPENAI_API_KEY via docker run -e OPENAI_API_KEY="sk-..."' > $HOME/app/repo/.env
+RUN echo '# Set OPENLLM_API_KEY (and optionally OPENAI_API_KEY) via docker run -e OPENLLM_API_KEY="sk-..."' > $HOME/app/repo/.env
 
 # Start script (required by SciLifeLab Serve)
 COPY start-script.sh $HOME/app/start-script.sh

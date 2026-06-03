@@ -21,6 +21,45 @@ from mcp.client.sse import sse_client
 
 load_dotenv(override=True)
 
+# ── LLM provider: self-hosted open-llm by default, OpenAI as fallback ──
+from openai import (APIConnectionError, AuthenticationError,
+                    PermissionDeniedError, InternalServerError)
+
+FALLBACK_ERRORS = (APIConnectionError, AuthenticationError,
+                   PermissionDeniedError, InternalServerError)
+PROVIDERS = [
+    {'name': 'open-llm',
+     'base_url': os.getenv('OPENLLM_BASE_URL', 'https://open-llm.scilifelab.se/api'),
+     'api_key':  os.getenv('OPENLLM_API_KEY'),
+     'model':    os.getenv('OPENLLM_MODEL', 'qwen3')},
+    {'name': 'openai', 'base_url': None,
+     'api_key': os.getenv('OPENAI_API_KEY'), 'model': 'gpt-4o'},
+]
+PROVIDERS = [p for p in PROVIDERS if p['api_key']]
+
+
+def invoke_llm(messages, tools=None):
+    last = None
+    for p in PROVIDERS:
+        try:
+            kwargs = {
+                'model': p['model'], 'base_url': p['base_url'],
+                'api_key': p['api_key'], 'temperature': 0,
+                'max_tokens': 2048,
+            }
+            if p['name'] == 'open-llm':          # qwen3 only
+                kwargs['extra_body'] = {
+                    'chat_template_kwargs': {'enable_thinking': False}
+                }
+            m = ChatOpenAI(**kwargs)
+            if tools:
+                m = m.bind_tools(tools)
+            return m.invoke(messages)
+        except FALLBACK_ERRORS as e:
+            print(f"  [{p['name']}] {type(e).__name__} — falling back")
+            last = e
+    raise RuntimeError('No LLM provider reachable') from last
+
 # -- Configuration -------------------------------------------------------------
 
 MCP_SSE_URL = 'http://localhost:8503/sse'
@@ -33,8 +72,6 @@ class AgentState(TypedDict):
     analysis: Annotated[dict, 'Objective data from the SHAMSUL tool']
 
 
-# LLM with tool binding (same model as Session 2)
-llm = ChatOpenAI(model='gpt-4o', temperature=0)
 
 TOOL_SCHEMA = {
     'name': 'analyze_xray',
@@ -53,7 +90,6 @@ TOOL_SCHEMA = {
     }
 }
 
-llm_with_tools = llm.bind_tools([TOOL_SCHEMA])
 
 
 # -- MCP helper using the official SDK -----------------------------------------
@@ -74,7 +110,7 @@ async def mediator_node(state: AgentState):
     Node 1: The LLM reads the user query and decides to call analyze_xray.
     '''
     print('[AGENT] Mediator: evaluating query...')
-    response = llm_with_tools.invoke(state['messages'])
+    response = invoke_llm(state['messages'], tools=[TOOL_SCHEMA])
     return {'messages': state['messages'] + [response]}
 
 
@@ -93,8 +129,7 @@ async def tool_execution_node(state: AgentState):
         tc = last_msg.tool_calls[0]
         tool_args = tc['args']
         tool_call_id = tc['id']
-        if 'image_path' not in tool_args or not tool_args['image_path']:
-            tool_args['image_path'] = state['image_path']
+        tool_args['image_path'] = state['image_path']   # always from CLI/state, never the model's guess
         tool_args['study_id'] = state['study_id']
 
     print('[AGENT] Tool node: calling analyze_xray via MCP (SDK)...')
@@ -184,7 +219,7 @@ async def diagnosis_node(state: AgentState):
         f'Please provide a structured assessment based on these findings.'
     ))
 
-    diagnosis = llm.invoke([system, user])
+    diagnosis = invoke_llm([system, user])
     return {'messages': state['messages'] + [diagnosis]}
 
 

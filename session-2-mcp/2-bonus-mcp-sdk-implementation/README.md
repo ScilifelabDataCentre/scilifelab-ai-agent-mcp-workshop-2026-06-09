@@ -47,10 +47,11 @@ This bonus section re-implements everything you built using the **official MCP P
 
 You need the Session 2 virtual environment (the same one used for `1-mcp-from-scratch/`).
 
-The advanced client calls OpenAI for the sampling demo. Your `.env` file should contain:
+The advanced client calls the configured LLM (self-hosted open-llm by default) for the sampling demo. Your `.env` file should contain:
 
 ```
-OPENAI_API_KEY="sk-your-key-here"
+OPENLLM_API_KEY="sk-your-key-here"
+# Optional OpenAI fallback: OPENAI_API_KEY="sk-..."
 ```
 
 The start script writes this automatically if you passed the key via `docker run -e`. Otherwise, edit the `.env` file in this directory.
@@ -200,7 +201,7 @@ The same safety logic from Part 5.2: blocked compounds (Gap 7), SMILES validatio
 
 **`Address already in use` on port 8501:** Stop any other server using that port. Run `lsof -i :8501` (Linux/macOS) or `netstat -ano | findstr 8501` (Windows) to find and kill the process.
 
-**Sampling demo shows `(Set OPENAI_API_KEY to see the LLM complete the hypothesis)`:** Edit `.env` in this directory to add your key, or re-run the Docker container with `-e OPENAI_API_KEY="sk-..."`.
+**Sampling demo shows `(Set OPENLLM_API_KEY or OPENAI_API_KEY to complete the hypothesis)`:** Edit `.env` in this directory to add your key, or re-run the Docker container with `-e OPENLLM_API_KEY="sk-..."`.
 
 ---
 

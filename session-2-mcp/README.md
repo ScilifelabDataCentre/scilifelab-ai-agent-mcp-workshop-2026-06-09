@@ -24,14 +24,14 @@ Each directory has its own README with detailed instructions.
 
 ## Getting started
 
-You need an **OpenAI API key**. Have it ready before you start.
+You need an **open-llm API key** (self-hosted — the default). An OpenAI key also works as an optional fallback. Have one ready before you start.
 
 ### Option 1: Pull from Docker Hub (recommended)
 
 Everything is pre-installed. One command to start:
 
 ```bash
-docker run -p 7860:7860 -e OPENAI_API_KEY="sk-..." mahbub1969/scilifelab-mcp-workshop:v1
+docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." mahbub1969/scilifelab-mcp-workshop:v1
 ```
 
 Then open **http://localhost:7860** in your browser and navigate to `1-mcp-from-scratch/mcp_workshop.ipynb`.
@@ -41,7 +41,7 @@ Then open **http://localhost:7860** in your browser and navigate to `1-mcp-from-
 ```bash
 # From the session-2-mcp/ directory
 docker build -t scilifelab-mcp-workshop:v1 .
-docker run -p 7860:7860 -e OPENAI_API_KEY="sk-..." scilifelab-mcp-workshop:v1
+docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." scilifelab-mcp-workshop:v1
 ```
 
 Then open **http://localhost:7860** as above.
@@ -68,10 +68,14 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
-# Add your API key
-echo 'OPENAI_API_KEY="sk-..."' > 1-mcp-from-scratch/.env
-echo 'OPENAI_API_KEY="sk-..."' > 2-bonus-mcp-sdk-implementation/.env
-echo 'OPENAI_API_KEY="sk-..."' > 3-bonus-mcp-serve-app-integration/.env
+# Add your open-llm key (base URL and model are shown explicitly; both have defaults in the code)
+for d in 1-mcp-from-scratch 2-bonus-mcp-sdk-implementation 3-bonus-mcp-serve-app-integration; do
+  cat > "$d/.env" <<EOF
+OPENLLM_API_KEY="sk-..."
+OPENLLM_BASE_URL="https://open-llm.scilifelab.se/api"
+OPENLLM_MODEL="qwen3"
+EOF
+done
 
 # Open the notebook
 cd 1-mcp-from-scratch/
@@ -121,7 +125,7 @@ session-2-mcp/
 |---|---|
 | Docker: `port is already allocated` | Stop any process using port 7860, or use `-p 8888:7860` and open port 8888 instead |
 | Jupyter shows but no notebooks appear | Navigate into `1-mcp-from-scratch/` in the Jupyter file browser |
-| OpenAI 401 / authentication error | Check that you passed `-e OPENAI_API_KEY="sk-..."` when starting the container |
+| LLM 401 / authentication error | Check that you passed `-e OPENLLM_API_KEY="sk-..."` (or `OPENAI_API_KEY` for the fallback) when starting the container |
 | `Address already in use` on 8501/8502 | Another server is running on that port — stop it first (see the notebook README) |
 
 For other issues, see the README inside each subdirectory.

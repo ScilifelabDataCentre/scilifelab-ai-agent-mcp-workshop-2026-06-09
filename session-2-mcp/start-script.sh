@@ -10,14 +10,22 @@ SUBDIRS=(
     "$REPO_DIR/3-bonus-mcp-serve-app-integration"
 )
 
-# Write .env from environment variable if provided
+# Write .env from environment variables (self-hosted open-llm by default, OpenAI optional)
+ENV_LINES="OPENLLM_BASE_URL=\"${OPENLLM_BASE_URL:-https://open-llm.scilifelab.se/api}\"\n"
+ENV_LINES+="OPENLLM_MODEL=\"${OPENLLM_MODEL:-qwen3}\"\n"
+[ -n "$OPENLLM_API_KEY" ] && ENV_LINES+="OPENLLM_API_KEY=\"$OPENLLM_API_KEY\"\n"
+[ -n "$OPENAI_API_KEY" ]  && ENV_LINES+="OPENAI_API_KEY=\"$OPENAI_API_KEY\"\n"
+ENV_CONTENT=$(printf "%b" "$ENV_LINES")
+
+if [ -n "$OPENLLM_API_KEY" ]; then
+    echo "✓ OPENLLM_API_KEY provided (self-hosted open-llm)"
+fi
 if [ -n "$OPENAI_API_KEY" ]; then
-    ENV_CONTENT="OPENAI_API_KEY=\"$OPENAI_API_KEY\""
-    echo "✓ OPENAI_API_KEY provided"
-else
-    ENV_CONTENT="OPENAI_API_KEY=\"sk-REPLACE-ME-with-your-real-key\""
-    echo "⚠  No OPENAI_API_KEY set. Parts 5.3 and 6 require it."
-    echo "   Edit the .env file in any subdirectory to add your key."
+    echo "✓ OPENAI_API_KEY provided (fallback)"
+fi
+if [ -z "$OPENLLM_API_KEY" ] && [ -z "$OPENAI_API_KEY" ]; then
+    echo "⚠  No OPENLLM_API_KEY or OPENAI_API_KEY set. Parts 5.3 and 6 require one."
+    echo "   Edit the .env file in any subdirectory to add a key."
 fi
 
 # Write to repo root
@@ -36,9 +44,11 @@ done
 
 echo ""
 echo "============================================================"
-echo "  Developing AI Agents in Life Sciences, Hands-on Session 2:"
+echo "  Workshop: Developing AI Agents in Life Sciences (Gothenburg), SciLifeLab Data Centre"
+echo "  Korallrevet, Natrium, Medicinaregatan 7B, Gothenburg"
+echo "  Hands-on Session 2:"
 echo "  AI agent collaboration with the Model Context Protocol (MCP)"
-echo "  2026-03-05"
+echo "  2026-06-09"
 echo "  Open: http://localhost:7860"
 echo "  Then open: 1-mcp-from-scratch/mcp_workshop.ipynb"
 echo "============================================================"
