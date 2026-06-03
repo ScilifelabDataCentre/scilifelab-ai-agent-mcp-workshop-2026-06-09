@@ -49,9 +49,15 @@ docker build -t scilifelab-langgraph-jupyter:v1 .
 **Run Docker container**
 
 ```bash
-docker run -p 8888:8888 -e OPENAI_API_KEY="sk-..." scilifelab-langgraph-jupyter:v1
+docker run -p 8888:8888 \
+  -e PILOT_API_KEY="sk-..." \
+  -e OPENAI_API_KEY="sk-..." \
+  scilifelab-langgraph-jupyter:v1
 ```
 
+The notebooks use the **SciLifeLab pilot LLM service** by default (`PILOT_API_KEY`)
+and fall back to **OpenAI** (`OPENAI_API_KEY`) if the pilot service is unreachable.
+If `PILOT_API_KEY` is not supplied, the workshop's shared pilot key is used.
 
 Go to **http://localhost:8888** on your browser and starting the lab
 

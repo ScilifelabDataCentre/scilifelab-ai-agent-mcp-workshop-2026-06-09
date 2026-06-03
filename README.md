@@ -188,7 +188,10 @@ docker pull long2406/scilifelab-langgraph-workshop:v1
 
 **Run the container** (replace `sk-...` with your OpenAI API key):
 ```bash
-docker run -p 8888:8888 -e OPENAI_API_KEY="sk-..." long2406/scilifelab-langgraph-workshop:v1
+docker run -p 8888:8888 \
+  -e PILOT_API_KEY="sk-..." \
+  -e OPENAI_API_KEY="sk-..." \
+  long2406/scilifelab-langgraph-workshop:v1
 ```
 
 Then open **http://localhost:8888** in your browser and navigate to `langgraph_lab.ipynb`.

@@ -34,8 +34,8 @@ WORKDIR $HOME/app
 # Workshop content
 COPY ./ $HOME/app
 
-# .env placeholder
-RUN echo '# Set OPENAI_API_KEY via docker run -e OPENAI_API_KEY="sk-..."' > $HOME/app/.env
+# .env placeholder (overwritten at runtime by start-script.sh)
+RUN echo '# Set PILOT_API_KEY / OPENAI_API_KEY via docker run -e PILOT_API_KEY="sk-..." -e OPENAI_API_KEY="sk-..."' > $HOME/app/.env
 
 # Start script (required by SciLifeLab Serve)
 RUN chmod +x $HOME/app/start-script.sh

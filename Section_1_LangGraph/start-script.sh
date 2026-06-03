@@ -1,12 +1,24 @@
 #!/bin/bash
 set -e
 
-# Write .env from environment variable if provided
+ENV_FILE=/home/workshop/app/.env
+
+# Build .env from environment variables provided at runtime.
+# The SciLifeLab pilot LLM service is used by default; OpenAI is the fallback.
+: > "$ENV_FILE"
+
+# SciLifeLab pilot service key (default LLM). Falls back to the workshop
+# shared key if no PILOT_API_KEY is provided at runtime.
+PILOT_API_KEY="${PILOT_API_KEY:-sk-6967dda1dcf34427a00b352b31f1ca20}"
+echo "PILOT_API_KEY=\"$PILOT_API_KEY\"" >> "$ENV_FILE"
+echo "✓ PILOT_API_KEY written to .env"
+
+# OpenAI key (fallback LLM). Only written if provided.
 if [ -n "$OPENAI_API_KEY" ]; then
-    echo "OPENAI_API_KEY=\"$OPENAI_API_KEY\"" > /home/workshop/app/.env
+    echo "OPENAI_API_KEY=\"$OPENAI_API_KEY\"" >> "$ENV_FILE"
     echo "✓ OPENAI_API_KEY written to .env"
 else
-    echo "⚠  No OPENAI_API_KEY set."
+    echo "⚠  No OPENAI_API_KEY set (OpenAI fallback will be unavailable)."
 fi
 
 echo ""
