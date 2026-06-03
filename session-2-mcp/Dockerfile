@@ -10,6 +10,9 @@
 # Local:
 #   docker build -t <your-dockerhub-account-name>/scilifelab-mcp-workshop:v2 .
 #   docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." <your-dockerhub-account-name>/scilifelab-mcp-workshop:v2
+# Multi-arch: to ensure it runs on both Linux and Mac
+#   docker buildx build --platform linux/amd64,linux/arm64 \
+#       -t <your-dockerhub-account-name>/scilifelab-mcp-workshop:v1 --push .
 #
 # SciLifeLab Serve deployment (https://serve.scilifelab.se/):
 #   Create a Custom app
