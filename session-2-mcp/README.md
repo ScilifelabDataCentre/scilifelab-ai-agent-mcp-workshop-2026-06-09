@@ -31,7 +31,7 @@ You need an **open-llm API key** (self-hosted — the default). An OpenAI key al
 Everything is pre-installed. One command to start:
 
 ```bash
-docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." mahbub1969/scilifelab-mcp-workshop:v1
+docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." mahbub1969/scilifelab-mcp-workshop:v2
 ```
 
 Then open **http://localhost:7860** in your browser and navigate to `1-mcp-from-scratch/mcp_workshop.ipynb`.
@@ -41,7 +41,7 @@ Then open **http://localhost:7860** in your browser and navigate to `1-mcp-from-
 ```bash
 # From the session-2-mcp/ directory
 docker build -t scilifelab-mcp-workshop:v1 .
-docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." scilifelab-mcp-workshop:v1
+docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." scilifelab-mcp-workshop:v2
 ```
 
 Then open **http://localhost:7860** as above.
