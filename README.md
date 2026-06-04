@@ -172,6 +172,7 @@ Docker Desktop is available for Ubuntu, Debian, and Fedora.
 ### Step 2: Ensure your API key is ready (on the day of the workshop)
 
 You will be registered as a user in our SciLifeLab OpenLLM pilot program. Please make sure you have access to the API key. You will **receive instructions by email** on how to obtain it before the workshop.
+> ⚠️ Optionally, you can also use your own OpenAI API key (for ChatGPT models) if you have one.
 
 > 🔑 **Do not share this key with others or commit it to any public repository.**
 
@@ -209,9 +210,13 @@ Then open **http://localhost:8888** in your browser and navigate to `langgraph_l
 docker pull mahbub1969/scilifelab-gothenburg-workshop-mcp:v1
 ```
 
-**Run the container** (replace `sk-...` with your OpenAI API key):
+**Run the container** 
+> ⚠️ Replace `sk-...` with your Scilifelab Open LLM API key (default, OPENLLM_API_KEY) and OpenAI API key (optional, OPENAI_API_KEY):
 ```bash
-docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." mahbub1969/scilifelab-gothenburg-workshop-mcp:v1
+docker run -p 7860:7860 \
+  -e OPENLLM_API_KEY="sk-..." \
+  -e OPENAI_API_KEY="sk-..." \
+  mahbub1969/scilifelab-gothenburg-workshop-mcp:v1
 ```
 
 Then open **http://localhost:7860** in your browser and navigate to `1-mcp-from-scratch/mcp_workshop.ipynb`.
