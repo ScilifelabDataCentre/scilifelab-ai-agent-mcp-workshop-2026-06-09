@@ -186,7 +186,7 @@ We strongly recommend pulling the pre-built images from Docker Hub. This is the 
 docker pull long2406/scilifelab-langgraph-workshop:v2
 ```
 
-**Run the container** (replace `sk-...` with your OpenAI API key):
+**Run the container**: replace `sk-...` with your PILOT LLM API key (mandatory) and OpenAI API key(optional)
 ```bash
 docker run -p 8888:8888 \
   -e PILOT_API_KEY="sk-..." \
