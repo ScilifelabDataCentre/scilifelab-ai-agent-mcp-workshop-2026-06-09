@@ -1,6 +1,6 @@
 # Session 2 – AI Agent Collaboration with the Model Context Protocol (MCP)
 
-> **SciLifeLab AI Agents in Life Sciences Workshop** · Gothenbur · 2026-06-09
+> [Developing AI Agents in Life Sciences (Gothenburg)](https://www.scilifelab.se/event/ai-agents-in-life-science-gothenburg/)
 
 In Session 1 you built a drug discovery AI agent with LangGraph, a brain that could reason, plan, and call tools like `resolve_smiles`, `get_properties`, and `lit_search`. But those tools were locked inside your Python file.
 
