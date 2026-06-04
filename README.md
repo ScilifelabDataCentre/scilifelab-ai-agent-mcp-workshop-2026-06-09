@@ -167,7 +167,7 @@ Docker Desktop is available for Ubuntu, Debian, and Fedora.
 
 ---
 
-### Step 2: Step 2: Ensure your API key is ready (on the day of the workshop)
+### Step 2: Ensure your API key is ready (on the day of the workshop)
 
 You will be registered as a user in our SciLifeLab OpenLLM pilot program. Please make sure you have access to the API key. You will **receive instructions by email** on how to obtain it before the workshop.
 
