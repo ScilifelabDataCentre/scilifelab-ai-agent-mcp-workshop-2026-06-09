@@ -1,10 +1,11 @@
 # [Developing AI Agents in Life Sciences (Gothenburg)](https://www.scilifelab.se/event/ai-agents-in-life-science-gothenburg/)
 
-## Hands-on Session 2: AI Agent Collaboration with the Model Context Protocol (MCP)
-
 > **SciLifeLab Data Centre** · Korallrevet, Natrium, Medicinaregatan 7B, Gothenburg · 2026-06-09
 
 ---
+
+## Hands-on Session 2: AI Agent Collaboration with the Model Context Protocol (MCP)
+
 
 ## What you will build
 
