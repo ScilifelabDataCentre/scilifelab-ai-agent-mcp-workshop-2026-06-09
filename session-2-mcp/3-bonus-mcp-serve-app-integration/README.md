@@ -1,8 +1,14 @@
-# Bonus: Wrapping a SciLifeLab Serve Gradio App as an MCP Server
+# [Developing AI Agents in Life Sciences (Gothenburg)](https://www.scilifelab.se/event/ai-agents-in-life-science-gothenburg/)
 
-## From Workshop to Real-World: Connecting a Deployed Medical AI Model via MCP
+## Hands-on Session 2: AI Agent Collaboration with the Model Context Protocol (MCP)
+
+> **SciLifeLab Data Centre** · Korallrevet, Natrium, Medicinaregatan 7B, Gothenburg · 2026-06-09
 
 ---
+
+## Bonus Section 3: Wrapping a SciLifeLab Serve Gradio App as an MCP Server
+
+### From Workshop to Real-World: Connecting a Deployed Medical AI Model via MCP
 
 ## What This Is
 
