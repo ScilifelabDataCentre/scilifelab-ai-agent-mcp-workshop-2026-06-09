@@ -167,9 +167,9 @@ Docker Desktop is available for Ubuntu, Debian, and Fedora.
 
 ---
 
-### Step 2: Save Your API Key (on the day of the workshop)
+### Step 2: Step 2: Ensure your API key is ready (on the day of the workshop)
 
-On the morning of the workshop, you will receive an **OpenAI API key by email**. You will need this key for both sessions.
+You will be registered as a user in our SciLifeLab OpenLLM pilot program. Please make sure you have access to the API key. You will **receive instructions by email** on how to obtain it before the workshop.
 
 > 🔑 **Do not share this key with others or commit it to any public repository.**
 
@@ -178,6 +178,8 @@ On the morning of the workshop, you will receive an **OpenAI API key by email**.
 ### Step 3: Pull and Run the Workshop Images
 
 We strongly recommend pulling the pre-built images from Docker Hub. This is the fastest way to get started and is the only setup we will support during the workshop.
+
+> ⚠️ **Pulling pre-built images from Docker Hub** is the only setup we will support during the workshop due to time constraints.
 
 #### Session 1: LangGraph Agent Development
 
