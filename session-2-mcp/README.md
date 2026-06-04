@@ -28,15 +28,20 @@ You need an **open-llm API key** (self-hosted — the default). An OpenAI key al
 
 ### Option 1: Pull from Docker Hub (recommended)
 
-Everything is pre-installed. One command to start:
+> ⚠️ **Pulling pre-built images from Docker Hub is the only setup we will support during the workshop due to time constraints.**
 
+Everything is pre-installed. One command to start:
+> ⚠️ Replace `sk-...` with your Scilifelab Open LLM API key (default, OPENLLM_API_KEY) and OpenAI API key (optional, OPENAI_API_KEY):
 ```bash
-docker run -p 7860:7860 -e OPENLLM_API_KEY="sk-..." mahbub1969/scilifelab-gothenburg-workshop-mcp:v1
+docker run -p 7860:7860 \
+  -e OPENLLM_API_KEY="sk-..." \
+  -e OPENAI_API_KEY="sk-..." \
+  mahbub1969/scilifelab-gothenburg-workshop-mcp:v1
 ```
 
 Then open **http://localhost:7860** in your browser and navigate to `1-mcp-from-scratch/mcp_workshop.ipynb`.
 
-### Option 2: Build the image locally
+### Option 2: Build the image locally (not supported during the workshop)
 
 ```bash
 # From the session-2-mcp/ directory
