@@ -2,16 +2,15 @@
 
 > **SciLifeLab Data Centre** · Korallrevet, Natrium, Medicinaregatan 7B, Gothenburg · 2026-06-09
 
+---
+
 ## Hands-on Session 2: AI Agent Collaboration with the Model Context Protocol (MCP)
 
 ## Section 1: MCP from Scratch
 
-
 In Session 1 you built a drug discovery AI agent with LangGraph, a brain that could reason, plan, and call tools like `resolve_smiles`, `get_properties`, and `lit_search`. But those tools were locked inside your Python file.
 
 **In this section you break them free.** You will expose those same tools over the Model Context Protocol (MCP) so that any compatible AI application can discover and call them, without touching your source code.
-
----
 
 ## How to use this material
 
