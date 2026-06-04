@@ -1,8 +1,8 @@
-# Developing AI Agents in Life Sciences
+# [Developing AI Agents in Life Sciences (Gothenburg)](https://www.scilifelab.se/event/ai-agents-in-life-science-gothenburg/)
 
 ## Hands-on Session 2: AI Agent Collaboration with the Model Context Protocol (MCP)
 
-> **SciLifeLab Data Centre** · Stockholm · 2026-03-05
+> **SciLifeLab Data Centre** · Korallrevet, Natrium, Medicinaregatan 7B, Gothenburg · 2026-06-09
 
 ---
 
@@ -58,9 +58,9 @@ For questions about Serve deployment, contact the SciLifeLab Serve team at **ser
 
 ## Running locally without Docker (not supported during the workshop)
 
-> ⚠️ **During the workshop we will only support the Docker-based setup above.** The local option is provided for your own reference after the session. We will not troubleshoot local environment issues during workshop time due to time constraints.
+> ⚠️ **Pulling pre-built images from Docker Hub is the only setup we will support during the workshop due to time constraints**. The local option is provided for your own reference after the session. We will not troubleshoot local environment issues during workshop.
 
-If you prefer to run without Docker:
+If you prefer to run without Docker later:
 
 ```bash
 # From the session-2-mcp/ directory
