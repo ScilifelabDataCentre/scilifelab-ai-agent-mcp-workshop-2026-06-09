@@ -24,9 +24,11 @@ Welcome!
 
 ## Speakers & Facilitators
 
-- **Dinh Long Huynh (dinh-long.huynh@uu.se)**: PhD Candidate, Uppsala University
-- **Mahbub Ul Alam (mahbub.ul.alam@scilifelab.uu.se)**: Data Engineer (AI), SciLifeLab Data Centre
 - **Johan Alfredéen (johan.alfredeen@scilifelab.uu.se)**: Data Engineer (AI), SciLifeLab Data Centre
+- **Mahbub Ul Alam (mahbub.ul.alam@scilifelab.uu.se)**: Data Engineer (AI), SciLifeLab Data Centre
+- **Dinh Long Huynh (dinh-long.huynh@uu.se)**: PhD Candidate, Uppsala University
+
+
 
 ---
 
