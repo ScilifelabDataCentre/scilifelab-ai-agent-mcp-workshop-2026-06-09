@@ -2,13 +2,13 @@
 
 > **SciLifeLab Data Centre** · Korallrevet, Natrium, Medicinaregatan 7B, Gothenburg · 2026-06-09
 
+---
+
 ## Hands-on Session 2: AI Agent Collaboration with the Model Context Protocol (MCP)
 
 ## Bonus Section 2: MCP Python SDK: Drug Discovery Implementation
 
 ### From Scratch to Production: The Same Server in Half the Code
-
----
 
 ## What This Is
 
