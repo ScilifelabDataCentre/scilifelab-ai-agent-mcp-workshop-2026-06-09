@@ -182,7 +182,7 @@ You will be registered as a user in our SciLifeLab OpenLLM pilot program. Please
 
 We strongly recommend pulling the pre-built images from Docker Hub. This is the fastest way to get started and is the only setup we will support during the workshop.
 
-> ⚠️ **Pulling pre-built images from Docker Hub** is the only setup we will support during the workshop due to time constraints.
+> ⚠️ **Pulling pre-built images from Docker Hub is the only setup we will support during the workshop due to time constraints.**
 
 #### Session 1: LangGraph Agent Development
 
