@@ -14,6 +14,7 @@ import base64
 import json
 import re
 from pathlib import Path
+import os
 
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
@@ -81,6 +82,49 @@ _MEDIA_TYPES = {
 }
 
 
+PILOT_BASE_URL = "https://open-llm.scilifelab.se/api"
+PILOT_MODEL = "qwen3"        # or "gemma3-27b"
+OPENAI_MODEL = "gpt-5.4"     # fallback model
+def get_llm(temperature: float = 0, **kwargs) -> ChatOpenAI:
+    """Return a chat model, preferring the SciLifeLab pilot service.
+
+    Order of preference:
+      1. SciLifeLab pilot LLM (`PILOT_MODEL`) — used by default.
+      2. OpenAI (`OPENAI_MODEL`) — fallback if the pilot service can't be
+         reached during the session, or if no `PILOT_API_KEY` is set.
+    """
+    pilot_key = os.getenv("PILOT_API_KEY")
+    openai_key = os.getenv("OPENAI_API_KEY")
+
+    # 1) Try the pilot service first
+    if pilot_key:
+        pilot_llm = ChatOpenAI(
+            model=PILOT_MODEL,
+            base_url=PILOT_BASE_URL,
+            api_key=pilot_key,
+            temperature=temperature,
+            extra_body = {"chat_template_kwargs": {"enable_thinking": False}},
+            **kwargs,
+        )
+        try:
+            pilot_llm.invoke("ping")  # lightweight connectivity check
+            print(f"✓ Using SciLifeLab pilot LLM ({PILOT_MODEL})")
+            return pilot_llm
+        except Exception as e:
+            print(f"⚠ Pilot LLM unavailable ({type(e).__name__}: {e}). Falling back to OpenAI.")
+    else:
+        print("⚠ PILOT_API_KEY not set — falling back to OpenAI.")
+
+    # 2) Fall back to OpenAI
+    if not openai_key:
+        raise RuntimeError(
+            "No usable LLM: the pilot service failed and OPENAI_API_KEY is not set. "
+            "Set PILOT_API_KEY and/or OPENAI_API_KEY in your .env file."
+        )
+    print(f"✓ Using OpenAI fallback ({OPENAI_MODEL})")
+    return ChatOpenAI(model=OPENAI_MODEL, temperature=temperature, **kwargs)
+
+
 def _encode_image(path: Path) -> tuple[str, str]:
     media_type = _MEDIA_TYPES.get(path.suffix.lower(), "image/png")
     data = base64.standard_b64encode(path.read_bytes()).decode("utf-8")
@@ -120,7 +164,7 @@ def figure_check(figure_path: str, model: str = "gpt-5") -> dict[str, str]:
 
     image_data, media_type = _encode_image(path)
 
-    llm = ChatOpenAI(model=model, temperature=0)
+    llm = get_llm(temperature=0)
     messages = [
         SystemMessage(content=FIGURE_EVALUATION_SYSTEM_PROMPT),
         HumanMessage(content=[

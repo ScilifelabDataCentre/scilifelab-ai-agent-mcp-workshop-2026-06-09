@@ -7,11 +7,14 @@ ENV_FILE=/home/workshop/app/.env
 # The SciLifeLab pilot LLM service is used by default; OpenAI is the fallback.
 : > "$ENV_FILE"
 
-# SciLifeLab pilot service key (default LLM). Falls back to the workshop
-# shared key if no PILOT_API_KEY is provided at runtime.
-PILOT_API_KEY="${PILOT_API_KEY:-sk-6967dda1dcf34427a00b352b31f1ca20}"
-echo "PILOT_API_KEY=\"$PILOT_API_KEY\"" >> "$ENV_FILE"
-echo "✓ PILOT_API_KEY written to .env"
+# SciLifeLab pilot service key (default LLM). Only written if provided
+# at runtime via -e PILOT_API_KEY="sk-...".
+if [ -n "$PILOT_API_KEY" ]; then
+    echo "PILOT_API_KEY=\"$PILOT_API_KEY\"" >> "$ENV_FILE"
+    echo "✓ PILOT_API_KEY written to .env"
+else
+    echo "⚠  No PILOT_API_KEY set (SciLifeLab pilot service will be unavailable)."
+fi
 
 # OpenAI key (fallback LLM). Only written if provided.
 if [ -n "$OPENAI_API_KEY" ]; then
