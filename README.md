@@ -88,19 +88,15 @@ The workshop will feature a series of engaging presentations, interactive discus
 
 *Presentation slides will be uploaded to this repository after the workshop.*
 
-<!--
-Once slides are added, populate the links below:
+[**Presentation 1** — Introduction: Exploring how AI agents can transform life sciences · *Johan Alfredéen*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/1_Introduction_Exploring_how_AI_agents%20_an_transform_life_sciences_Johan_Alfred%C3%A9en.pdf)
 
-[**Presentation 1**: Introduction. Exploring how AI agents can transform life sciences. *Johan Alfredéen*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/1_Introduction_Exploring_how_AI_agents_can_transform_life_sciences_Johan_Alfred%C3%A9en.pdf)
+[**Demonstration** — AI agents in action · *Mahbub Ul Alam*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/2_AI_agents_in_action_Mahbub_Ul_Alam.pdf)
 
-[**Demonstration**: AI agents in action. *Mahbub Ul Alam*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/2_AI_agents_in_action_Mahbub_Ul_Alam.pdf)
+[**Hands-on Session 1** — Developing AI agents with LangGraph & ReAct · *Dinh Long Huynh, Mahbub Ul Alam*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/3_Developing_AI_agents_with_LangGraph_and_ReAct_Dinh_Long_Huynh_Johan_Alfred%C3%A9en_Mahbub_Ul_Alam.pdf)
 
-[**Hands-on Session 1**: Developing AI agents with LangGraph & ReAct. *Dinh Long Huynh, Mahbub Ul Alam*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/3_Developing_AI_agents_with_LangGraph_and_ReAct_Dinh_Long_Huynh_Mahbub_Ul_Alam.pdf)
+[**Hands-on Session 2** — AI agent collaboration with the Model Context Protocol (MCP) · *Mahbub Ul Alam, Johan Alfredéen, Dinh Long Huynh*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/4_AI_agent_collaboration_with_the_Model_Context_Protocol_(MCP)_Mahbub_Ul_Alam_Johan_Alfred%C3%A9en_Dinh_Long_Huynh.pdf)
 
-[**Hands-on Session 2**: AI agent collaboration with the Model Context Protocol (MCP). *Mahbub Ul Alam, Johan Alfredéen, Dinh Long Huynh*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/4_AI_agent_collaboration_with_the_Model_Context_Protocol_(MCP)_Mahbub_Ul_Alam_Johan_Alfred%C3%A9en_Dinh_Long_Huynh.pdf)
-
-[**Presentation 2**: Deploying AI Agents. Legal, technical, and practical considerations. *Johan Alfredéen*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/5_Deploying_AI_Agents_Legal_Technical_and_Practical_Considerations_Johan%20Alfred%C3%A9en.pdf)
--->
+[**Presentation 2** — Deploying AI Agents: Legal, Technical, and Practical Considerations · *Johan Alfredéen*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/5_Deploying_AI_Agents_Legal_Technical_and_Practical_Considerations_Johan%20Alfred%C3%A9en.pdf)
 
 ---
 
