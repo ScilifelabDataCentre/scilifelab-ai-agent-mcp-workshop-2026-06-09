@@ -86,8 +86,6 @@ The workshop will feature a series of engaging presentations, interactive discus
 
 ## Download Presentation Slides
 
-*Presentation slides will be uploaded to this repository after the workshop.*
-
 [**Presentation 1** — Introduction: Exploring how AI agents can transform life sciences · *Johan Alfredéen*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/1_Introduction_Exploring_how_AI_agents%20_an_transform_life_sciences_Johan_Alfred%C3%A9en.pdf)
 
 [**Demonstration** — AI agents in action · *Mahbub Ul Alam*](https://github.com/ScilifelabDataCentre/scilifelab-ai-agent-mcp-workshop-2026-06-09/blob/main/presentation-slides/2_AI_agents_in_action_Mahbub_Ul_Alam.pdf)
